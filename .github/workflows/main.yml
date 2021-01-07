@@ -25,7 +25,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          platforms: linux/amd64
+          platforms: linux/arm64,linux/arm/v6
+          cache-from: type=registry,ref=andrestaffe/docker-duoauthproxy:latest
+          cache-to: type=inline
           tags: andrestaffe/docker-duoauthproxy:latest
       -
         name: Update repo description

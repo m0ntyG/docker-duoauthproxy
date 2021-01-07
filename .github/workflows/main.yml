@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  multi:
+  build-multiarch:
     runs-on: ubuntu-latest
     steps:
       -

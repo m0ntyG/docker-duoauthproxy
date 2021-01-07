@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# install Duo Auth Proxy
 cd /tmp/
 tar xzf duoauthproxy-*.tgz
 cd duoauthproxy-*-src

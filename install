@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /tmp/
+tar xzf duoauthproxy-*.tgz
+cd duoauthproxy-*-src
+make
+./duoauthproxy-build/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script yes
+rm -rf /tmp/duoauthproxy-*

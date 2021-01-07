@@ -33,3 +33,10 @@ jobs:
           push: true
           tags: |
             andrestaffe/docker-duoauthproxy:latest
+      -
+        name: Update repo description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: andrestaffe/docker-duoauthproxy

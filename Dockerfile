@@ -18,6 +18,7 @@ RUN \
     perl \
     zlib1g-dev
 
+# run install script
 RUN \   
     chmod +x /tmp/install && \
     ./tmp/install

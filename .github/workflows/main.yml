@@ -31,7 +31,7 @@ jobs:
 #          cache-from: type=registry,ref=andrestaffe/docker-duoauthproxy:latest
 #          cache-to: type=inline
 #          tags: andrestaffe/docker-duoauthproxy:latest
-      - 
+       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
         with:

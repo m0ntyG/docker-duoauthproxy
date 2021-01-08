@@ -15,14 +15,24 @@ RUN \
 
 # run install script 
 RUN \
-#    chsh -s /bin/bash && \
-#    exec /bin/bash && \
-    adduser -S duo_authproxy_svc && \
-    cd /tmp/ && \
-    tar xzf duoauthproxy-*.tgz && \
-    cd duoauthproxy-*-src && \
-    make && \
-    ./duoauthproxy-build/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc && \
+    adduser -S duo_authproxy_svc
+
+RUN \
+    cd /tmp/
+
+RUN \
+    tar xzf duoauthproxy-*.tgz
+
+RUN \
+    cd duoauthproxy-*-src
+    
+RUN \
+    make
+
+RUN \
+    ./duoauthproxy-build/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc
+
+RUN \
     rm -rf /tmp/duoauthproxy-*
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

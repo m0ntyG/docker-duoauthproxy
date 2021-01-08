@@ -36,4 +36,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: andrestaffe/docker-duoauthproxy
-          readme-filepath: README.md
+          readme-filepath: "./README.md"

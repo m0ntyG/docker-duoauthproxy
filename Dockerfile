@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 # add latest Duo bins
-ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz /tmp/
+ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz
 
 # install dependend packages
 RUN \
@@ -18,9 +18,6 @@ RUN \
     adduser -S duo_authproxy_svc
 
 RUN \
-    cd /tmp/
-
-RUN \
     tar xzf duoauthproxy-*.tgz
 
 RUN \
@@ -31,9 +28,6 @@ RUN \
 
 RUN \
     ./duoauthproxy-build/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc
-
-RUN \
-    rm -rf /tmp/duoauthproxy-*
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 

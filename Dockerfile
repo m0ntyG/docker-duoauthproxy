@@ -16,8 +16,8 @@ RUN \
 
 # run install script 
 RUN \
-    chsh -s /bin/bash && \
-    exec /bin/bash && \
+#    chsh -s /bin/bash && \
+#    exec /bin/bash && \
     adduser -S duo_authproxy_svc && \
     cd /tmp/ && \
     tar xzf duoauthproxy-*.tgz && \

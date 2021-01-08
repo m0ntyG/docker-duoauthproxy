@@ -11,7 +11,6 @@ RUN \
     libffi-dev \
     perl \
     bash \
-    shadow \
     zlib-dev
 
 # run install script 

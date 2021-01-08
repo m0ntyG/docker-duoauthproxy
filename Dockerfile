@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 # add latest Duo bins
-ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz
+ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz .
 
 # install dependend packages
 RUN \

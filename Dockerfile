@@ -32,7 +32,7 @@ RUN \
     
 # run install script 
 RUN \   
-    ./tmp/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script yes && \
+    ./tmp/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script no && \
     rm -rf /tmp/*
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf

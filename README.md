@@ -3,6 +3,9 @@
 
 # andrestaffe/duoauthproxy
 
+Based on: https://github.com/jumanjihouse/docker-duoauthproxy
+
+
 Usage:
 ```
 docker run -it -d --name duoauthproxy -p 1812:1812/udp \
@@ -10,3 +13,5 @@ docker run -it -d --name duoauthproxy -p 1812:1812/udp \
 --restart always \
 andrestaffe/docker-duoauthproxy
 ```
+
+Visit Duo Security Authentication Proxy Release Notes: https://duo.com/docs/authproxy-notes

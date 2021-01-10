@@ -5,7 +5,10 @@
 # information on Anchore's container image scanning tool Grype, see
 # https://github.com/anchore/grype
 name: Anchore Container Scan
-on: push
+on:
+  push:
+    tags:
+      - 'v*.*.*'
 jobs:
   Anchore-Build-Scan:
     runs-on: ubuntu-latest

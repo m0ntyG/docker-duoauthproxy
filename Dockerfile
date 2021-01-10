@@ -16,7 +16,7 @@ ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz /tmp/
 # run prep
 RUN \
     mkdir src && \
-    tar xzf duoauthproxy-*.tgz -C src && \
+    tar xzf duoauthproxy-*.tgz -C /tmp/src && \
     cd src/ && \
     mv duoauthproxy-*-src/* . && \
     make

@@ -15,15 +15,14 @@ ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz /tmp/
 
 # run prep
 RUN \
-    mkdir src && \
-    tar zxf duoauthproxy-*.tgz -C /tmp/src && \
-    cd /tmp/src/ && \
+    tar xzf *.tgz && \
+    rm *.tgz && \
     mv duoauthproxy-*-src/* . && \
     make
 
 FROM debian:buster-slim
 
-COPY --from=builder /tmp/src/duoauthproxy-build/ /tmp/
+COPY --from=builder /tmp/duoauthproxy-build/ /tmp/
 
 # run prep
 RUN \

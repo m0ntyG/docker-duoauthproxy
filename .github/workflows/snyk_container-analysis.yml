@@ -9,8 +9,6 @@
 name: Snyk Container
 on:
   push:
-    tags:
-      - 'v*.*.*'
 jobs:
   snyk:
     runs-on: ubuntu-latest

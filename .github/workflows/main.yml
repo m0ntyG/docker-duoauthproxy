@@ -2,6 +2,8 @@ name: debian
 
 on:
   push:
+    branches:
+    - master
     - release/*
 
 jobs:

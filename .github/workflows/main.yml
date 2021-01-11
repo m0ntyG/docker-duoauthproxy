@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          platforms: linux/amd64,linux/arm/v6
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           cache-from: type=registry,ref=andrestaffe/docker-duoauthproxy
           cache-to: type=inline
           tags: andrestaffe/docker-duoauthproxy

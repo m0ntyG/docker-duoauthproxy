@@ -1,4 +1,4 @@
-FROM debian:buster-backports as builder
+FROM debian:buster-slim as builder
 
 WORKDIR /tmp/
 
@@ -20,7 +20,7 @@ RUN \
     mv duoauthproxy-*-src/* . && \
     make
 
-FROM debian:buster-backports
+FROM debian:buster-slim
 
 COPY --from=builder /tmp/duoauthproxy-build/ /tmp/
 

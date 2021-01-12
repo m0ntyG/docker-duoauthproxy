@@ -19,10 +19,8 @@ ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz /tmp/
 RUN \
     tar xzf *.tgz && \
     rm *.tgz && \
-    mv duoauthproxy-*-src/* .
-
-RUN \
-    make
+    mv duoauthproxy-*-src/* . && \
+    make --debug
 
 FROM debian:stable-slim
 

@@ -1,6 +1,7 @@
 FROM debian:stable-slim as builder
 
 WORKDIR /tmp/
+SHELL ["/bin/bash", "-c"]
 
 # install dependend packages
 RUN \
@@ -24,13 +25,15 @@ FROM debian:stable-slim
 
 COPY --from=builder /tmp/duoauthproxy-build/ /tmp/
 
+SHELL ["/bin/bash", "-c"]
+
 # run prep
 RUN \
     apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     supervisor
     
 # run install script 
-RUN \   
+RUN \
     ./tmp/install --install-dir /opt/duoauthproxy --service-user duo_authproxy_svc --log-group duo_authproxy_grp --create-init-script no && \
     rm -rf /tmp/*
 

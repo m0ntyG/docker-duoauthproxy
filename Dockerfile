@@ -13,7 +13,7 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # add latest Duo bins
-ADD https://dl.duosecurity.com/duoauthproxy-latest-src.tgz /tmp/
+ADD https://dl.duosecurity.com/duoauthproxy-5.1.0-src.tgz /tmp/
 
 # run prep
 RUN \

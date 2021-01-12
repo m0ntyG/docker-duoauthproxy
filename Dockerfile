@@ -22,7 +22,7 @@ RUN \
     mv duoauthproxy-*-src/* .
 
 RUN \
-    make
+    /bin/bash -c make
 
 FROM debian:stable-slim
 

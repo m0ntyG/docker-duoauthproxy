@@ -13,14 +13,22 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # add latest Duo bins
-ADD https://dl.duosecurity.com/duoauthproxy-5.1.1-src.tgz /tmp/
+ADD https://dl.duosecurity.com/duoauthproxy-5.4.0-src.tgz /tmp/
 
 # run prep
-RUN \
-    tar xzf *.tgz && \
-    rm *.tgz && \
-    mv duoauthproxy-*-src/* . && \
-    make
+#RUN \
+#    tar xzf *.tgz && \
+#    rm *.tgz && \
+#    mv duoauthproxy-*-src/* . && \
+#    make
+
+RUN tar xzf *.tgz
+
+RUN rm *.tgz
+    
+RUN mv duoauthproxy-*-src/* .
+
+RUN make
 
 FROM debian:stable-slim
 
